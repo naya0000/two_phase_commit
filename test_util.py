@@ -1,5 +1,5 @@
 from concurrent import futures
-from parameterized import parameterized
+# from parameterized import parameterized
 import itertools
 import logging
 import os.path
@@ -113,6 +113,7 @@ class TestBase(unittest.TestCase):
             worker_forwarder_server.stop(0)
     
     def start_coordinator_and_workers(self, num_workers):
+        print("test starting %s workers", num_workers)
         logger.debug('test starting %s workers', num_workers)
         self.coordinator_log = persistent_log.TestingDummyPersistentLog()
         self.worker_logs = [persistent_log.TestingDummyPersistentLog() for i in range(num_workers)]
